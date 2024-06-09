@@ -9,11 +9,10 @@
 @import "basics/layout";
 @import "basics/base";
 
-// Views
-// @import "pages/home-page";
 
 // Components
+@import "cmps/home-page";
 @import "cmps/app-header";
 @import "cmps/app-footer";
-// @import "cmps/user-msg";
 @import "cmps/logo";
+// @import "cmps/user-msg";

@@ -1,0 +1,11 @@
+.home-page {
+
+    padding-block: calc($gap * 3);
+    row-gap: calc($gap * 2);
+
+    .hero {
+        background-color: $clrPrimary1;
+        grid-template-columns: 4fr 1fr;
+        padding: calc($gap * 3);
+    }
+}

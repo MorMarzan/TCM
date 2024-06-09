@@ -1,11 +1,30 @@
 .home-page {
 
     padding-block: calc($gap * 3);
-    row-gap: calc($gap * 2);
+
+    &>* {
+
+        padding-inline: calc($gap * 3);
+        padding-block: calc($gap * 2);
+    }
 
     .hero {
         background-color: $clrPrimary1;
         grid-template-columns: 4fr 1fr;
-        padding: calc($gap * 3);
+        padding-block: calc($gap * 3);
+        ;
+    }
+
+    .main {
+        grid-template-columns: 1fr 3fr;
+        align-items: center;
+        text-align: justify;
+        // padding-block-start: calc($gap);
+    }
+
+    .img-wrapper-deco {
+        img {
+            max-width: 300px;
+        }
     }
 }

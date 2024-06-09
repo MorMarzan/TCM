@@ -27,6 +27,10 @@
     &.cols {
         grid-auto-flow: column;
     }
+
+    &.align-center {
+        align-items: center;
+    }
 }
 
 .clean-list {

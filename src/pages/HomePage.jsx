@@ -1,9 +1,12 @@
+import { ContactUs } from '../cmps/ContactUs'
 import logo from '/images/favicon.png'
+import snails from '/images/snails.png'
+import flower from '/images/flower.jpg'
 
 export function HomePage() {
     return (
         <div className="home-page grid">
-            <section className="hero grid">
+            <section className="hero grid align-center">
                 <div className='headers'>
                     <h2>Taking Care of Myself</h2>
                     <h4>Simple Tools for Self-Therapy</h4>
@@ -12,9 +15,10 @@ export function HomePage() {
                     <img src={logo}></img>
                 </div>
             </section>
-            <section className="main">
-                <div className="img-wrapper">
 
+            <section className="main grid">
+                <div className="img-wrapper">
+                    <img src={flower}></img>
                 </div>
                 <div className='content'>
                     <p>TCM is a 3 month one-on-one program, where you will learn how to significantly improve the way you take care of yourself.</p>
@@ -27,7 +31,12 @@ export function HomePage() {
                         I’ll be happy to help.</p>
                 </div>
             </section>
-            <section className="contact-us"></section>
+
+            <div className="img-wrapper-deco flex justify-center">
+                <img src={snails}></img>
+            </div>
+
+            <ContactUs />
         </div>
     )
 }

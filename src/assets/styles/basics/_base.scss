@@ -3,7 +3,7 @@
 }
 
 ::selection {
-    background-color: var(--clrPrimary2);
+    background-color: $clrPrimary2;
 }
 
 html {
@@ -14,7 +14,6 @@ html {
 }
 
 body {
-    color: var(--clrPrimary3);
     margin: 0;
 }
 
@@ -101,12 +100,12 @@ a {
     font-size: em(18px, 15px);
     line-height: lh(28px, 18px);
     text-decoration: none;
-    color: var(--clrPrimary3);
+    color: $clrPrimary-1;
     cursor: pointer;
 }
 
 a:hover {
-    color: var(--clrPrimary2);
+    color: $clrPrimary2;
 }
 
 .btn {
@@ -119,7 +118,7 @@ a:hover {
 
 mark {
     background-color: unset;
-    color: var(--clrPrimary2);
+    color: $clrPrimary2;
 }
 
 .logo {
@@ -130,7 +129,7 @@ mark {
 nav {
 
     .active {
-        color: var(--clrPrimary2);
+        color: $clrPrimary2;
     }
 }
 

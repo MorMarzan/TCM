@@ -1,13 +1,25 @@
-import { Route, Router, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Routes, BrowserRouter as Router } from 'react-router-dom'
 import './assets/styles/main.scss'
+import { AppHeader } from './cmps/AppHeader'
+import { AppFooter } from './cmps/AppFooter'
+import { HomePage } from './pages/HomePage'
 
 export function App() {
 
   return (
     <Router>
-      <Route element={<HomePage />} path="/" />
+      <section className="main-layout full app">
+        <AppHeader />
+
+        <main className="main-layout full app">
+          <Routes>
+            <Route element={<HomePage />} path="/" />
+          </Routes>
+        </main>
+
+        <AppFooter />
+      </section>
     </Router>
-    // <p>May all beings be happy</p>
   )
 }
 

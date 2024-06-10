@@ -5,7 +5,7 @@ import flower from '/images/flower.jpg'
 
 export function HomePage() {
     return (
-        <div className="home-page grid">
+        <div className="home-page full main-layout grid">
             <section className="hero grid align-center">
                 <div className='headers'>
                     <h2>Taking Care of Myself</h2>
@@ -32,11 +32,12 @@ export function HomePage() {
                 </div>
             </section>
 
+
+            <ContactUs />
+
             <div className="img-wrapper-deco flex justify-center">
                 <img src={snails}></img>
             </div>
-
-            <ContactUs />
         </div>
     )
 }

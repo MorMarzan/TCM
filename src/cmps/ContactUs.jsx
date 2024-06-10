@@ -1,6 +1,5 @@
 import { TextField, ThemeProvider, createTheme } from "@mui/material"
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
-import { styled } from '@mui/system';
 import { useState } from "react"
 
 export function ContactUs() {
@@ -14,7 +13,7 @@ export function ContactUs() {
 
     function handleSubmit(ev) {
         ev.preventDefault()
-        console.log(ev)
+        console.log(userInfo)
     }
 
     const theme = createTheme({

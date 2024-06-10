@@ -37,8 +37,15 @@
     }
 
     .MuiOutlinedInput-root {
+        // box-shadow: none;
+
         &.Mui-focused .MuiOutlinedInput-notchedOutline {
             border-color: $clrPrimaryBase;
+        }
+
+        fieldset {
+            border: 1px $clrPrimaryBase solid;
+
         }
     }
 }

@@ -14,6 +14,7 @@ export function ContactUs() {
     function handleSubmit(ev) {
         ev.preventDefault()
         console.log(userInfo)
+        //thank you and reset
     }
 
     const theme = createTheme({

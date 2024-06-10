@@ -9,10 +9,10 @@ export function HomePage() {
             <section className="hero grid align-center">
                 <div className='headers'>
                     <h2>Taking Care of Myself</h2>
-                    <h4>Simple Tools for Self-Therapy</h4>
+                    <h3>Simple Tools for Self-Therapy</h3>
                 </div>
                 <div className="img-wrapper">
-                    <img src={logo}></img>
+                    <img src={snails}></img>
                 </div>
             </section>
 

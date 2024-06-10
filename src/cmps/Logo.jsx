@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import logo from '/images/favicon.png'
+import logo from '/images/snails.png'
 
 export function Logo() {
 
@@ -8,7 +8,7 @@ export function Logo() {
     return (
         <div className="logo grid cols">
             <img src={logo}></img>
-            <h1 onClick={() => navigate('/')}>Taking Care of Myself</h1>
+            {/* <h1 onClick={() => navigate('/')}>Taking Care of Myself</h1> */}
         </div>
     )
 }

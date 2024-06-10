@@ -12,14 +12,13 @@
         background-color: $clrPrimary1;
         grid-template-columns: 4fr 1fr;
         padding-block: calc($gap * 3);
-        ;
+        text-align: center;
     }
 
     .main {
         grid-template-columns: 1fr 3fr;
         align-items: center;
         text-align: justify;
-        // padding-block-start: calc($gap);
     }
 
     .img-wrapper-deco {

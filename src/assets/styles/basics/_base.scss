@@ -39,17 +39,17 @@ h1 {
 h2 {
     font-size: em(40px, 15px);
 
-    @include for-normal-layout {
-        font-size: em(64px, 15px);
-    }
+    // @include for-normal-layout {
+    //     font-size: em(40px, 15px);
+    // }
 
-    @include for-wide-layout {
-        font-size: em(100px, 15px);
-    }
+    // @include for-wide-layout {
+    //     font-size: em(100px, 15px);
+    // }
 }
 
 h3 {
-    font-size: em(64px, 15px);
+    font-size: em(26px, 15px);
 }
 
 h4 {

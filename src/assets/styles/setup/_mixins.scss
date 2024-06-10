@@ -41,41 +41,15 @@
     font-size: em(18px, 15px);
     line-height: lh(28px, 18px);
     padding: em(10px, 18px) em(30px, 18px);
-    border: 2px var(--clrPrimary3) solid;
+    border: 1px $clrPrimaryBase solid;
     border-radius: $border-radius;
-    font-family: Livvic-SemiBold, sans-serif;
-
-
+    font-family: Montserrat-Regular, sans-serif;
+    color: black;
     transition: background-color 0.2s;
     cursor: pointer;
 
-    @if $type ==secondary-light {
-        background-color: var(--clrPrimary3);
-        color: var(--clrSecondary-2);
-        border-color: var(--clrPrimary1);
-
-        &:hover {
-            background-color: var(--clrSecondary2);
-            color: var(--clrSecondary-2);
-        }
-    }
-
-    @else if $type ==darkish {
-        background-color: transparent;
-        color: var(--clrSecondary-2);
-        border-color: var(--clrSecondary-2);
-
-        &:hover {
-            background-color: var(--clrSecondary-1);
-            color: var(--clrPrimary3);
-        }
-    }
-
-    @else {
-        &:hover {
-            background-color: var(--clrPrimary3);
-            color: var(--clrSecondary-2);
-        }
+    &:hover {
+        background-color: $clrPrimaryBase;
     }
 
 
@@ -83,8 +57,5 @@
         opacity: 0.25;
         pointer-events: none;
     }
-
-
-
 
 }

@@ -1,0 +1,44 @@
+.contact-us {
+
+    justify-content: center;
+
+    form {
+        min-width: 300px;
+        gap: $gap;
+    }
+
+    .textarea {
+        box-sizing: border-box;
+        width: 100%;
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-size: 15px;
+        padding: 8px 12px;
+        border-radius: 5px;
+        border: 1px $clrPrimaryBase solid;
+
+        &:hover {
+            border-color: black;
+        }
+
+        &:focus {
+            border-color: $clrPrimaryBase;
+            box-shadow: 0 0 0 2px #95d2b38a;
+        }
+
+        &:focus-visible {
+            outline: 0;
+        }
+    }
+
+    .MuiInputLabel-root {
+        &.Mui-focused {
+            color: $clrPrimaryBase;
+        }
+    }
+
+    .MuiOutlinedInput-root {
+        &.Mui-focused .MuiOutlinedInput-notchedOutline {
+            border-color: $clrPrimaryBase;
+        }
+    }
+}

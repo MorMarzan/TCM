@@ -1,11 +1,11 @@
-import { TextField } from "@mui/material"
+import { TextField, ThemeProvider, createTheme } from "@mui/material"
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { styled } from '@mui/system';
 import { useState } from "react"
 
 export function ContactUs() {
 
-    const [credentials, setUserInfo] = useState({})
+    const [userInfo, setUserInfo] = useState({ email: '', fullname: '', phone: '', msg: '' })
 
     function handleChange({ target }) {
         const { name: field, value } = target
@@ -14,105 +14,67 @@ export function ContactUs() {
 
     function handleSubmit(ev) {
         ev.preventDefault()
-        // onLogin(userInfo)
         console.log(ev)
     }
 
-    const grey = {
-        50: '#F3F6F9',
-        100: '#E5EAF2',
-        200: '#DAE2ED',
-        300: '#C7D0DD',
-        400: '#B0B8C4',
-        500: '#9DA8B7',
-        600: '#6B7A90',
-        700: '#434D5B',
-        800: '#303740',
-        900: '#1C2025',
-    };
-
-    const blue = {
-        100: '#DAECFF',
-        200: '#b6daff',
-        400: '#3399FF',
-        500: '#007FFF',
-        600: '#0072E5',
-        900: '#003A75',
-    };
-
-    const Textarea = styled(BaseTextareaAutosize)(
-        ({ theme }) => `
-        box-sizing: border-box;
-        width: 100%;
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: 1.5;
-        padding: 8px 12px;
-        border-radius: 8px;
-        color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
-        background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
-        border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
-        box-shadow: 0px 2px 2px ${theme.palette.mode === 'dark' ? grey[900] : grey[50]};
-    
-        &:hover {
-          border-color: ${blue[400]};
-        }
-    
-        &:focus {
-          border-color: ${blue[400]};
-          box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[600] : blue[200]};
-        }
-    
-        // firefox
-        &:focus-visible {
-          outline: 0;
-        }
-      `,
-    )
+    const theme = createTheme({
+        typography: {
+            fontFamily: [
+                'Montserrat-Regular', 'sans-serif'
+            ].join(','),
+        },
+    })
 
     return (
-        <section className="contact-us">
-            <form className="login-form grid" onSubmit={handleSubmit} autoComplete="off">
+        <ThemeProvider theme={theme}>
+            <section className="contact-us grid">
+                <form className="login-form grid" onSubmit={handleSubmit} autoComplete="off">
 
-                <TextField
-                    label="Full name"
-                    type="text"
-                    name="fullname"
-                    onChange={handleChange}
-                    fullWidth
-                    autoComplete="off"
-                    required
-                />
-                <TextField
-                    label="Phone"
-                    type="tel"
-                    name="phone"
-                    // value={credentials.username}
-                    onChange={handleChange}
-                    fullWidth
-                    autoComplete="off"
-                    required
-                />
-                <TextField
-                    label="Email"
-                    type="email"
-                    name="email"
-                    onChange={handleChange}
-                    fullWidth
-                    autoComplete="off"
-                    required
-                />
+                    <TextField
+                        label="Full name"
+                        type="text"
+                        name="fullname"
+                        onChange={handleChange}
+                        fullWidth
+                        autoComplete="off"
+                        required
+                        className='form-element text-input'
+                    />
 
-                <Textarea
-                    aria-label="minimum height"
-                    minRows={3}
-                    placeholder="Your Message here"
-                    full width
-                />
+                    <TextField
+                        label="Email"
+                        type="email"
+                        name="email"
+                        onChange={handleChange}
+                        fullWidth
+                        autoComplete="off"
+                        required
+                        className='form-element text-input'
+                    />
 
-                {/* <button className="btn">{isSignup ? 'Signup' : 'Login'}</button> */}
-            </form>
-        </section>
+                    <TextField
+                        label="Phone"
+                        type="tel"
+                        name="phone"
+                        onChange={handleChange}
+                        fullWidth
+                        autoComplete="off"
+                        className='form-element text-input'
+                    />
+
+                    <BaseTextareaAutosize
+                        aria-label="minimum height"
+                        minRows={3}
+                        placeholder="Your message here"
+                        name="msg"
+                        onChange={handleChange}
+                        className="form-element textarea"
+
+                    />
+
+                    <button className="btn">Submit</button>
+                </form>
+            </section>
+        </ThemeProvider>
     )
 }

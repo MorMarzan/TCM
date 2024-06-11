@@ -1,5 +1,5 @@
 import { ContactUs } from '../cmps/ContactUs'
-import logo from '/images/favicon.png'
+import logo from '/images/Hands.svg'
 import snails from '/images/snails.png'
 import flower from '/images/flower.jpg'
 
@@ -12,7 +12,7 @@ export function HomePage() {
                     <h3>Simple Tools for Self-Therapy</h3>
                 </div>
                 <div className="img-wrapper">
-                    <img src={snails}></img>
+                    <img src={logo}></img>
                 </div>
             </section>
 
@@ -27,7 +27,7 @@ export function HomePage() {
                     <p>The tools used as part of this program work, but the emphasis is not on any specific tool, it goes much deeper. The process helps develop <mark>clarity</mark> about what is most important <mark>for you</mark> and the <mark>determination</mark> to make your life much better.
                         Through the program, you will learn how to break habit patterns which work against you, and instead develop habits that <mark>really</mark> help you. It will also strengthen your ability to observe your life and the choices you make through a new lens.</p>
                     <p>It is simple, and quite easy, but it will only work if you’re willing to put in the work.</p>
-                    <p>Maybe it’s time for you to take better care of yourself?
+                    <p><mark>Maybe it’s time for you to take better care of yourself? </mark><br></br>
                         I’ll be happy to help.</p>
                 </div>
             </section>

@@ -4,12 +4,13 @@ import { NavLink, useNavigate } from "react-router-dom"
 import hamburger from '/images/icon-hamburger.svg'
 import closeIcon from '/images/icon-close.svg'
 import { Logo } from "./Logo"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGlobe } from "@fortawesome/free-solid-svg-icons"
 
 export function AppHeader() {
 
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileNavOpen, seIsMobileNavOpen] = useState(false)
-    const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 730)
     const navigate = useNavigate()
 
@@ -51,6 +52,7 @@ export function AppHeader() {
                         {/* <NavLink to="/" onClick={toggleMobileNav}>Home</NavLink>
                         {user && <NavLink to="/expense" onClick={toggleMobileNav}>My Expenses</NavLink>}
                         <NavLink to="/about" onClick={toggleMobileNav}>About</NavLink> */}
+                        <a className="lang-switch flex align-center"><FontAwesomeIcon icon={faGlobe} /><span>He</span></a>
                     </nav>
                 </div>
 

@@ -23,10 +23,10 @@
         }
 
         img {
-            max-width: 110px;
+            max-width: 60px;
 
             @include for-normal-layout {
-                max-width: unset;
+                max-width: 80px;
             }
         }
 

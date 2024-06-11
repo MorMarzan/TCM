@@ -30,8 +30,10 @@ export function ContactUs() {
             <section className="contact-us grid">
                 <form className="login-form grid" onSubmit={handleSubmit} autoComplete="off">
 
+                    <h3 className="title">Contact me</h3>
+
                     <TextField
-                        label="Full name"
+                        label="Name"
                         type="text"
                         name="fullname"
                         onChange={handleChange}
@@ -72,7 +74,7 @@ export function ContactUs() {
 
                     />
 
-                    <button className="btn">Submit</button>
+                    <button className="btn">Send</button>
                 </form>
             </section>
         </ThemeProvider>

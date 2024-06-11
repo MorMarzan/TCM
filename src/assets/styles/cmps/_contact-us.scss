@@ -37,8 +37,6 @@
     }
 
     .MuiOutlinedInput-root {
-        // box-shadow: none;
-
         &.Mui-focused .MuiOutlinedInput-notchedOutline {
             border-color: $clrPrimaryBase;
         }
@@ -47,5 +45,9 @@
             border: 1px $clrPrimaryBase solid;
 
         }
+    }
+
+    .title {
+        text-align: center;
     }
 }

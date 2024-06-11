@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react"
-import { NavLink, useNavigate } from "react-router-dom"
 import { HashLink as Link } from 'react-router-hash-link'
-import hamburger from '/images/icon-hamburger.svg'
-import closeIcon from '/images/icon-close.svg'
 import { Logo } from "./Logo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faGlobe, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { useTranslation } from "react-i18next"
+import { LangSwitch } from "./LangSwitch"
 
 export function AppHeader() {
 
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileNavOpen, seIsMobileNavOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 730)
-    const navigate = useNavigate()
+    const { t } = useTranslation()
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -40,22 +39,19 @@ export function AppHeader() {
     const mobileNavOpenClass = isMobile && isMobileNavOpen ? 'open' : ''
 
     return (
-        <>
-            <header className={"main-layout full app-header " + headerScrolledClass}>
+        <header className={"main-layout full app-header " + headerScrolledClass}>
 
-                <div className={"backdrop " + mobileNavOpenClass} onClick={toggleMobileNav}></div>
-                <div className="section-container flex">
-                    <Logo />
-                    <FontAwesomeIcon icon={faBars} className="hamburger link" onClick={toggleMobileNav}></FontAwesomeIcon>
-                    <nav className={"flex app-nav " + mobileNavOpenClass}>
-                        {/* <img src={closeIcon} alt="close" className="close" onClick={toggleMobileNav}></img> */}
-                        <a className="close" onClick={toggleMobileNav}><FontAwesomeIcon icon={faXmark}></FontAwesomeIcon></a>
-                        <Link smooth to="#contact-us" onClick={toggleMobileNav}>Contact me</Link>
-                        <a className="lang-switch flex align-center link" onClick={toggleMobileNav}><FontAwesomeIcon icon={faGlobe} /><span>He</span></a>
-                    </nav>
-                </div>
+            <div className={"backdrop " + mobileNavOpenClass} onClick={toggleMobileNav}></div>
+            <div className="section-container flex">
+                <Logo />
+                <FontAwesomeIcon icon={faBars} className="hamburger link" onClick={toggleMobileNav}></FontAwesomeIcon>
+                <nav className={"flex app-nav " + mobileNavOpenClass}>
+                    <a className="close" onClick={toggleMobileNav}><FontAwesomeIcon icon={faXmark}></FontAwesomeIcon></a>
+                    <Link smooth to="#contact-us" onClick={toggleMobileNav}>{t('contact')}</Link>
+                    <LangSwitch />
+                </nav>
+            </div>
 
-            </header>
-        </>
+        </header>
     )
 }

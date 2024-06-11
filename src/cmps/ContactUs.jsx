@@ -27,7 +27,7 @@ export function ContactUs() {
 
     return (
         <ThemeProvider theme={theme}>
-            <section className="contact-us grid">
+            <section className="contact-us grid" id="contact-us">
                 <form className="login-form grid" onSubmit={handleSubmit} autoComplete="off">
 
                     <h3 className="title">Contact me</h3>

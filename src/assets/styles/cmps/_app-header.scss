@@ -39,13 +39,17 @@
 
     nav {
 
+        .lang-switch {
+            gap: 3px;
+        }
+
         @include for-mobile-layout {
             position: fixed;
             top: 0;
             right: 0;
             height: 100vh;
             width: 70%;
-            background-color: $clrPrimaryBase;
+            background-color: $clrPrimary2;
             flex-direction: column;
             align-items: start;
             padding: 56px 25px 0 48px;
@@ -69,10 +73,7 @@
             margin-inline-start: auto;
             display: flex;
             align-items: center;
-
-            .lang-switch {
-                gap: 2px;
-            }
+            gap: calc($gap * 2);
 
             // a:first-child {
             //     margin-inline-start: 80px;

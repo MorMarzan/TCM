@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { NavLink, useNavigate } from "react-router-dom"
-
+import { HashLink as Link } from 'react-router-hash-link'
 import hamburger from '/images/icon-hamburger.svg'
 import closeIcon from '/images/icon-close.svg'
 import { Logo } from "./Logo"
@@ -49,10 +49,8 @@ export function AppHeader() {
                     <img src={hamburger} alt="hamburger" className="hamburger" onClick={toggleMobileNav}></img>
                     <nav className={"flex app-nav " + mobileNavOpenClass}>
                         <img src={closeIcon} alt="close" className="close" onClick={toggleMobileNav}></img>
-                        {/* <NavLink to="/" onClick={toggleMobileNav}>Home</NavLink>
-                        {user && <NavLink to="/expense" onClick={toggleMobileNav}>My Expenses</NavLink>}
-                        <NavLink to="/about" onClick={toggleMobileNav}>About</NavLink> */}
-                        <a className="lang-switch flex align-center"><FontAwesomeIcon icon={faGlobe} /><span>He</span></a>
+                        <Link smooth to="#contact-us" onClick={toggleMobileNav}>Contact me</Link>
+                        <a className="lang-switch flex align-center" onClick={toggleMobileNav}><FontAwesomeIcon icon={faGlobe} /><span>He</span></a>
                     </nav>
                 </div>
 

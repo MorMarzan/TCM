@@ -29,12 +29,11 @@
     }
 
     .hamburger {
-        width: 20px;
-        height: 17px;
+        font-size: 20px;
     }
 
     .close {
-        max-width: 16px;
+        font-size: 20px;
     }
 
     nav {
@@ -63,7 +62,6 @@
             &.open {
                 transform: translateX(0);
             }
-
 
         }
 

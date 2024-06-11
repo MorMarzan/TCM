@@ -86,7 +86,8 @@ p {
     margin: 0 0 1em;
 }
 
-a {
+a,
+.link {
     font-size: em(18px, 15px);
     line-height: lh(28px, 18px);
     text-decoration: none;
@@ -94,7 +95,8 @@ a {
     cursor: pointer;
 }
 
-a:hover {
+a:hover,
+.link:hover {
     color: $font-color-mark;
 }
 

@@ -5,7 +5,7 @@ import hamburger from '/images/icon-hamburger.svg'
 import closeIcon from '/images/icon-close.svg'
 import { Logo } from "./Logo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGlobe } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faGlobe, faXmark } from "@fortawesome/free-solid-svg-icons"
 
 export function AppHeader() {
 
@@ -46,11 +46,12 @@ export function AppHeader() {
                 <div className={"backdrop " + mobileNavOpenClass} onClick={toggleMobileNav}></div>
                 <div className="section-container flex">
                     <Logo />
-                    <img src={hamburger} alt="hamburger" className="hamburger" onClick={toggleMobileNav}></img>
+                    <FontAwesomeIcon icon={faBars} className="hamburger link" onClick={toggleMobileNav}></FontAwesomeIcon>
                     <nav className={"flex app-nav " + mobileNavOpenClass}>
-                        <img src={closeIcon} alt="close" className="close" onClick={toggleMobileNav}></img>
+                        {/* <img src={closeIcon} alt="close" className="close" onClick={toggleMobileNav}></img> */}
+                        <a className="close" onClick={toggleMobileNav}><FontAwesomeIcon icon={faXmark}></FontAwesomeIcon></a>
                         <Link smooth to="#contact-us" onClick={toggleMobileNav}>Contact me</Link>
-                        <a className="lang-switch flex align-center" onClick={toggleMobileNav}><FontAwesomeIcon icon={faGlobe} /><span>He</span></a>
+                        <a className="lang-switch flex align-center link" onClick={toggleMobileNav}><FontAwesomeIcon icon={faGlobe} /><span>He</span></a>
                     </nav>
                 </div>
 

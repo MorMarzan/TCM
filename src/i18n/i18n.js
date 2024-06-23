@@ -22,6 +22,9 @@ i18n
     lng: 'en', // default language
     fallbackLng: 'en',
     supportedLngs: ['en', 'he'],
+    interpolation: {
+      escapeValue: false // react already safes from xss
+    },
     detection: {
       order: ['querystring', 'cookie', 'localStorage', 'path', 'subdomain'],
       caches: ['cookie']

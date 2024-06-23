@@ -33,7 +33,7 @@ export function LangSwitch() {
     }
 
     return (
-        <button onClick={toggleLanguage} className="lang-switch flex align-center link">
+        <button hrefLang={isLangHe ? 'en' : 'he'} onClick={toggleLanguage} className="lang-switch flex align-center link">
             <FontAwesomeIcon icon={faGlobe} />
             <span>{isLangHe ? 'EN' : 'HE'}</span>
         </button>

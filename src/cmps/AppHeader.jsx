@@ -3,15 +3,13 @@ import { HashLink as Link } from 'react-router-hash-link'
 import { Logo } from "./Logo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
-import { useTranslation } from "react-i18next"
 import { LangSwitch } from "./LangSwitch"
 
-export function AppHeader() {
+export function AppHeader({ t }) {
 
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileNavOpen, seIsMobileNavOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 730)
-    const { t } = useTranslation()
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)

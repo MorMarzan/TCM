@@ -21,6 +21,10 @@ export function LangSwitch() {
         }
     }, [])
 
+    useEffect(() => {
+        document.body.classList.toggle('rtl', isLangHe)
+    }, [isLangHe])
+
     function toggleLanguage() {
         const lngToSwitch = isLangHe ? 'en' : 'he'
         setIsLangHe(!isLangHe)

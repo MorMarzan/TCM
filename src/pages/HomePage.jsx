@@ -2,17 +2,16 @@ import { ContactUs } from '../cmps/ContactUs'
 import logo from '/images/Hands.svg'
 import snails from '/images/snails.png'
 import flower from '/images/flower.jpg'
-import { Trans, useTranslation } from 'react-i18next'
+import { Trans } from 'react-i18next'
 
-export function HomePage() {
-    const { t } = useTranslation()
+export function HomePage({ t }) {
 
     return (
         <div className="home-page full main-layout grid">
             <section className="hero grid align-center">
                 <div className='headers'>
-                    <h2>Taking Care of Myself</h2>
-                    <h3>Simple Tools for Self-Therapy</h3>
+                    <h2>{t('tcmTitle')}</h2>
+                    <h3>{t('tcmSecTitle')}</h3>
                 </div>
                 <div className="img-wrapper">
                     <img src={logo}></img>
@@ -42,17 +41,16 @@ export function HomePage() {
                         </Trans>
                     </p>
                     <p>{t('tcmSimple')}</p>
-                    {/* <p>
-                        <Trans i18nKey="tcmMaybeTime">
-                            <mark>Maybe it’s time for you to take better care of yourself? </mark>I’ll be happy to help.
-                        </Trans>
-                    </p> */}
-                    <p><mark>Maybe it’s time for you to take better care of yourself? </mark><br></br>I’ll be happy to help.</p>
+                    <p>
+                        <mark>{t('tcmMaybeTime')}</mark>
+                        <br></br>
+                        <span> {t('tcmHelp')}</span>
+                    </p>
                 </div>
             </section>
 
 
-            <ContactUs />
+            <ContactUs t={t} />
 
             <div className="img-wrapper-deco flex justify-center">
                 <img src={snails}></img>

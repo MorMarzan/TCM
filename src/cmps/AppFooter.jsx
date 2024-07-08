@@ -1,10 +1,10 @@
 
-export function AppFooter() {
+export function AppFooter({ t }) {
 
     return (
         <footer className="main-layout full app-footer">
             <div className="section-container">
-                <h3>Taking care of myself</h3>
+                <h3>{t('tcmTitle')}</h3>
             </div>
         </footer>
     )

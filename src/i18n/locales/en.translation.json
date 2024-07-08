@@ -1,9 +1,17 @@
 {
     "contact": "Contact me",
+    "name": "Name",
+    "phone": "Phone",
+    "mail": "Email",
+    "submit": "Send",
+    "msg": "Your message here",
     "tcmIntro": "TCM is a 3 month one-on-one program, where you will learn how to <1>significantly</1> improve the way you take care of yourself.",
     "tcmBasic": "It seems quite basic, and it’s actually not that hard, but surprisingly almost no one is good at it.",
     "tcmFirstSixSessions": "The first 6 sessions cover the learning process and the rest will work towards supporting you to get established in taking <1>really good</1> care of yourself.",
     "tcmTools": "The tools used as part of this program work, but the emphasis is not on any specific tool, it goes much deeper. The process helps develop <1>clarity</1> about what is most important <1>for you</1> and the <1>determination</1> to make your life much better. Through the program, you will learn how to break habit patterns which work against you, and instead develop habits that <1>really</1> help you. It will also strengthen your ability to observe your life and the choices you make through a new lens.",
     "tcmSimple": "It is simple, and quite easy, but it will only work if you’re willing to put in the work.",
-    "tcmMaybeTime": "<1>Maybe it’s time for you to take better care of yourself?</1><0></0>I’ll be happy to help."
+    "tcmMaybeTime": "Maybe it’s time for you to take better care of yourself?",
+    "tcmHelp": " I’ll be happy to help.",
+    "tcmTitle": "Taking Care of Myself (TCM)",
+    "tcmSecTitle": "Simple Tools for Self-Therapy"
 }

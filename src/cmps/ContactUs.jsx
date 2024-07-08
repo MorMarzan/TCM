@@ -2,7 +2,7 @@ import { TextField, ThemeProvider, createTheme } from "@mui/material"
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useState } from "react"
 
-export function ContactUs() {
+export function ContactUs({ t }) {
 
     const [userInfo, setUserInfo] = useState({ email: '', fullname: '', phone: '', msg: '' })
 
@@ -30,10 +30,10 @@ export function ContactUs() {
             <section className="contact-us grid" id="contact-us">
                 <form className="login-form grid" onSubmit={handleSubmit} autoComplete="off">
 
-                    <h3 className="title">Contact me</h3>
+                    <h3 className="title">{t('contact')}</h3>
 
                     <TextField
-                        label="Name"
+                        label={t('name')}
                         type="text"
                         name="fullname"
                         onChange={handleChange}
@@ -44,7 +44,7 @@ export function ContactUs() {
                     />
 
                     <TextField
-                        label="Email"
+                        label={t('mail')}
                         type="email"
                         name="email"
                         onChange={handleChange}
@@ -55,7 +55,7 @@ export function ContactUs() {
                     />
 
                     <TextField
-                        label="Phone"
+                        label={t('phone')}
                         type="tel"
                         name="phone"
                         onChange={handleChange}
@@ -67,14 +67,14 @@ export function ContactUs() {
                     <BaseTextareaAutosize
                         aria-label="minimum height"
                         minRows={3}
-                        placeholder="Your message here"
+                        placeholder={t('msg')}
                         name="msg"
                         onChange={handleChange}
                         className="form-element textarea"
 
                     />
 
-                    <button className="btn">Send</button>
+                    <button className="btn">{t('submit')}</button>
                 </form>
             </section>
         </ThemeProvider>

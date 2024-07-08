@@ -1,10 +1,12 @@
 import { TextField, ThemeProvider, createTheme } from "@mui/material"
 import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
 import { useState } from "react"
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function ContactUs({ t }) {
 
     const [userInfo, setUserInfo] = useState({ email: '', fullname: '', phone: '', msg: '' })
+    const { isLangHe } = useLanguage()
 
     function handleChange({ target }) {
         const { name: field, value } = target
@@ -40,7 +42,8 @@ export function ContactUs({ t }) {
                         fullWidth
                         autoComplete="off"
                         required
-                        className='form-element text-input'
+                        className={`form-element text-input ${isLangHe ? 'rtl-input' : ''}`}
+
                     />
 
                     <TextField
@@ -51,7 +54,8 @@ export function ContactUs({ t }) {
                         fullWidth
                         autoComplete="off"
                         required
-                        className='form-element text-input'
+                        className={`form-element text-input ${isLangHe ? 'rtl-input' : ''}`}
+
                     />
 
                     <TextField
@@ -61,7 +65,8 @@ export function ContactUs({ t }) {
                         onChange={handleChange}
                         fullWidth
                         autoComplete="off"
-                        className='form-element text-input'
+                        className={`form-element text-input ${isLangHe ? 'rtl-input' : ''}`}
+
                     />
 
                     <BaseTextareaAutosize

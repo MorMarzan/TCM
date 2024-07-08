@@ -4,12 +4,14 @@ import { Logo } from "./Logo"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
 import { LangSwitch } from "./LangSwitch"
+import { useTranslation } from "react-i18next"
 
-export function AppHeader({ t }) {
+export function AppHeader() {
 
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMobileNavOpen, seIsMobileNavOpen] = useState(false)
     const [isMobile, setIsMobile] = useState(window.innerWidth < 730)
+    const { t } = useTranslation()
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)

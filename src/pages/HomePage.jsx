@@ -2,9 +2,10 @@ import { ContactUs } from '../cmps/ContactUs'
 import logo from '/images/Hands.svg'
 import snails from '/images/snails.png'
 import flower from '/images/flower.jpg'
-import { Trans } from 'react-i18next'
+import { Trans, useTranslation } from 'react-i18next'
 
-export function HomePage({ t }) {
+export function HomePage() {
+    const { t } = useTranslation()
 
     return (
         <div className="home-page full main-layout grid">

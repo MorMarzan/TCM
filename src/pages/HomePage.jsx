@@ -8,14 +8,22 @@ export function HomePage() {
     const { t } = useTranslation()
 
     async function onSubmit({ email, fullname, msg, phone }) {
-        const response = await fetch('../netlify/functions/sendEmail.js', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, fullname, msg, phone })
-        })
+        try {
+            const response = await fetch('/.netlify/functions/sendEmail', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, fullname, msg, phone })
+            })
 
-        const result = await response.json();
-        console.log(result)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`)
+            }
+
+            const result = await response.json()
+            console.log(result)
+        } catch (error) {
+            console.error('Error sending email:', error)
+        }
     }
 
     return (

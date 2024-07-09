@@ -7,8 +7,8 @@ import { Trans, useTranslation } from 'react-i18next'
 export function HomePage() {
     const { t } = useTranslation()
 
-    async function onSubmit(userInfo) {
-        const response = await fetch('/.netlify/functions/send-email', {
+    async function onSubmit({ email, fullname, msg, phone }) {
+        const response = await fetch('../netlify/functions/sendEmail.js', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, fullname, msg, phone })

@@ -1,17 +1,17 @@
 const mailgun = require('mailgun-js');
 
 exports.handler = async function (event, context) {
-  const { email, subject, message } = JSON.parse(event.body);
+  const { email, fullname, msg, phone } = JSON.parse(event.body);
 
   const DOMAIN = process.env.MAILGUN_DOMAIN;
   const apiKey = process.env.MAILGUN_API_KEY;
   const mg = mailgun({ apiKey: apiKey, domain: DOMAIN });
 
   const data = {
-    from: 'Your Name <your-email@yourdomain.com>',
-    to: email,
-    subject: subject,
-    text: message
+    from: email,
+    to: 'Your Name mormarzan@gmail.com>',
+    subject: 'New Lead from TCM website',
+    text: `${fullname} wrote: ${msg} contact details: ${email + ',' + phone}`
   };
 
   try {

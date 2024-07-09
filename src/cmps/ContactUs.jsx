@@ -25,6 +25,7 @@ export function ContactUs({ t }) {
                 'Montserrat-Regular', 'sans-serif'
             ].join(','),
         },
+        // direction: 'rtl',
     })
 
     return (

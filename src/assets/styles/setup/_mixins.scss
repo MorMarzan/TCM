@@ -48,10 +48,14 @@
     transition: background-color 0.2s;
     cursor: pointer;
 
+    @if $type =='light' {
+        background-color: $font-color-mark;
+        border: unset;
+    }
+
     &:hover {
         background-color: $clrPrimaryBase;
     }
-
 
     @if $disabled ==true {
         opacity: 0.25;

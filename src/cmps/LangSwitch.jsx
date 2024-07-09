@@ -7,9 +7,9 @@ export function LangSwitch() {
     const { isLangHe, toggleLanguage } = useLanguage()
 
     return (
-        <button hrefLang={isLangHe ? 'en' : 'he'} onClick={toggleLanguage} className="lang-switch flex align-center link">
+        <button hrefLang={isLangHe ? 'en' : 'he'} onClick={toggleLanguage} className="lang-switch btn light flex align-center link">
+            <span>{isLangHe ? 'English' : 'עברית'}</span>
             <FontAwesomeIcon icon={faGlobe} />
-            <span>{isLangHe ? 'EN' : 'HE'}</span>
         </button>
     )
 }

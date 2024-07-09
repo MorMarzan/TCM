@@ -25,6 +25,20 @@ body {
 .rtl-input {
     text-align: right;
     direction: rtl;
+
+    .MuiFormLabel-root {
+        left: inherit !important;
+        right: 1.75rem !important;
+        transform-origin: right !important;
+    }
+
+    legend {
+        text-align: right;
+
+        span {
+            padding-right: unset;
+        }
+    }
 }
 
 h1,
@@ -115,6 +129,10 @@ a:hover,
 
     &.disabled {
         @include btn($disabled: true);
+    }
+
+    &.light {
+        @include btn(light)
     }
 }
 

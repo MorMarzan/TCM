@@ -12,18 +12,18 @@
     }
 
     .hero {
-        background-color: $clrPrimary1;
-        padding-block: calc($gap * 3);
+        background-color: #D8EFD3;
+        padding-block-end: 10px;
+        padding-block-start: 15px;
         text-align: center;
-        row-gap: 10px;
-        padding-inline: calc($gap);
+        padding-inline: 10px;
 
         @include for-normal-layout {
             padding-inline: calc($gap * 3);
         }
 
         img {
-            max-width: 60px;
+            max-width: 40px;
 
             @include for-normal-layout {
                 max-width: 80px;
@@ -32,6 +32,7 @@
 
         @include for-normal-layout {
             grid-template-columns: 4fr 1fr;
+            padding-block: 30px;
         }
     }
 

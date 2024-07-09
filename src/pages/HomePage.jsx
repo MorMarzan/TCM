@@ -7,6 +7,17 @@ import { Trans, useTranslation } from 'react-i18next'
 export function HomePage() {
     const { t } = useTranslation()
 
+    async function onSubmit(userInfo) {
+        const response = await fetch('/.netlify/functions/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, fullname, msg, phone })
+        })
+
+        const result = await response.json();
+        console.log(result)
+    }
+
     return (
         <div className="home-page full main-layout grid">
             <section className="hero grid align-center">
@@ -51,7 +62,7 @@ export function HomePage() {
             </section>
 
 
-            <ContactUs t={t} />
+            <ContactUs t={t} onSubmit={onSubmit} />
 
             <div className="img-wrapper-deco flex justify-center">
                 <img src={snails}></img>

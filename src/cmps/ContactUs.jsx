@@ -3,7 +3,7 @@ import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAuto
 import { useState } from "react"
 import { useLanguage } from "../contexts/LanguageContext";
 
-export function ContactUs({ t }) {
+export function ContactUs({ t, onSubmit }) {
 
     const [userInfo, setUserInfo] = useState({ email: '', fullname: '', phone: '', msg: '' })
     const { isLangHe } = useLanguage()
@@ -16,6 +16,7 @@ export function ContactUs({ t }) {
     function handleSubmit(ev) {
         ev.preventDefault()
         console.log(userInfo)
+        onSubmit(userInfo)
         //thank you and reset
     }
 

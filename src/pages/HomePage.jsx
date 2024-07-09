@@ -9,7 +9,7 @@ export function HomePage() {
 
     async function onSubmit({ email, fullname, msg, phone }) {
         try {
-            const response = await fetch('/.netlify/functions/sendEmail', {
+            const response = await fetch('/.netlify/functions/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, fullname, msg, phone })

@@ -58,8 +58,10 @@
     }
 
     @if $disabled ==true {
-        opacity: 0.25;
-        pointer-events: none;
+        & {
+            opacity: 0.25;
+            pointer-events: none;
+        }
     }
 
 }

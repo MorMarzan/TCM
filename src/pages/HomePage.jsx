@@ -9,18 +9,19 @@ export function HomePage() {
 
     async function onSubmit({ email, fullname, msg, phone }) {
         try {
-            const response = await fetch('/.netlify/functions/send-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, fullname, msg, phone })
-            })
+            // const response = await fetch('/.netlify/functions/send-email', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify({ email, fullname, msg, phone })
+            // })
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`)
-            }
+            // if (!response.ok) {
+            //     throw new Error(`HTTP error! status: ${response.status}`)
+            // }
 
-            const result = await response.json()
-            console.log(result)
+            // const result = await response.json()
+            // console.log(result)
+            console.log(arguments)
         } catch (error) {
             console.error('Error sending email:', error)
         }

@@ -4,6 +4,7 @@ import snails from '/images/snails.png'
 import flower from '/images/flower.jpg'
 import { Trans, useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser';
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 
 export function HomePage() {
@@ -12,6 +13,7 @@ export function HomePage() {
 
     async function onSubmit({ email, fullname, msg, phone }) {
         try {
+
             const templateParams = {
                 from_name: fullname,
                 from_email: email,
@@ -27,9 +29,13 @@ export function HomePage() {
             )
 
             console.log('Email sent:', result.text)
+            showSuccessMsg('Thank you for reaching out! I will get back to you as soon as possible.')
 
         } catch (error) {
+
             console.error('Error sending email:', error)
+            showErrorMsg('Sorry, a problem occurred. Please try again')
+
         }
     }
 

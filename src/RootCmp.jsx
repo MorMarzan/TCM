@@ -4,6 +4,7 @@ import { AppHeader } from './cmps/AppHeader'
 import { AppFooter } from './cmps/AppFooter'
 import { HomePage } from './pages/HomePage'
 import { LanguageProvider } from './contexts/LanguageContext'
+import { UserMsg } from './cmps/UserMsg'
 
 export function App() {
 
@@ -20,6 +21,7 @@ export function App() {
           </main>
 
           <AppFooter />
+          <UserMsg />
         </section>
       </LanguageProvider>
     </Router>

@@ -15,9 +15,12 @@ export function ContactUs({ t, onSubmit }) {
 
     function handleSubmit(ev) {
         ev.preventDefault()
-        console.log(userInfo)
         onSubmit(userInfo)
-        //thank you and reset
+        resetForm()
+    }
+
+    function resetForm() {
+        setUserInfo({ email: '', fullname: '', phone: '', msg: '' });
     }
 
     const theme = createTheme({
@@ -26,7 +29,6 @@ export function ContactUs({ t, onSubmit }) {
                 'Montserrat-Regular', 'sans-serif'
             ].join(','),
         },
-        // direction: 'rtl',
     })
 
     return (
@@ -40,6 +42,7 @@ export function ContactUs({ t, onSubmit }) {
                         label={t('name')}
                         type="text"
                         name="fullname"
+                        value={userInfo.fullname}
                         onChange={handleChange}
                         fullWidth
                         autoComplete="off"
@@ -52,6 +55,7 @@ export function ContactUs({ t, onSubmit }) {
                         label={t('mail')}
                         type="email"
                         name="email"
+                        value={userInfo.email}
                         onChange={handleChange}
                         fullWidth
                         autoComplete="off"
@@ -64,6 +68,7 @@ export function ContactUs({ t, onSubmit }) {
                         label={t('phone')}
                         type="tel"
                         name="phone"
+                        value={userInfo.phone}
                         onChange={handleChange}
                         fullWidth
                         autoComplete="off"
@@ -76,6 +81,7 @@ export function ContactUs({ t, onSubmit }) {
                         minRows={3}
                         placeholder={t('msg')}
                         name="msg"
+                        value={userInfo.msg}
                         onChange={handleChange}
                         className="form-element textarea"
 

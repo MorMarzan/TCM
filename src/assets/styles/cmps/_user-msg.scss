@@ -1,0 +1,23 @@
+.user-msg {
+    position: fixed;
+    left: 50%;
+    // top: -100px;
+    top: 10px;
+    transform: translate(-50%, 50%);
+    z-index: 20;
+    transition: top 0.5s ease;
+    padding: 15px 20px;
+    color: $font-color;
+
+    &.shown {
+        top: 10px;
+    }
+
+    &.success {
+        background-color: $clrPrimary-1;
+    }
+
+    &.error {
+        background-color: $font-color-mark;
+    }
+}

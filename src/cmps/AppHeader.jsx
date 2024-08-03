@@ -48,7 +48,7 @@ export function AppHeader() {
                 <nav className={"flex app-nav " + mobileNavOpenClass}>
                     <a className="close" onClick={toggleMobileNav}><FontAwesomeIcon icon={faXmark}></FontAwesomeIcon></a>
                     <Link smooth to="#contact-us" onClick={toggleMobileNav}>{t('contact')}</Link>
-                    <LangSwitch />
+                    <LangSwitch toggleMobileNav={toggleMobileNav} />
                 </nav>
             </div>
 

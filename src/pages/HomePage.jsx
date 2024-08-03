@@ -29,12 +29,15 @@ export function HomePage() {
             )
 
             console.log('Email sent:', result.text)
-            showSuccessMsg('Thank you for reaching out! I will get back to you as soon as possible.')
+            const successMsg = t('successMsg')
+            showSuccessMsg(successMsg)
 
         } catch (error) {
 
             console.error('Error sending email:', error)
-            showErrorMsg('Sorry, a problem occurred. Please try again')
+            // showErrorMsg('Sorry, a problem occurred. Please try again')
+            const errorMsg = t('errorMsg')
+            showErrorMsg(errorMsg)
 
         }
     }

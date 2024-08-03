@@ -1,5 +1,5 @@
 import { ContactUs } from '../cmps/ContactUs'
-import logo from '/images/Hands.svg'
+import logo from '/images/hands-favicon.png'
 import snails from '/images/snails.png'
 import flower from '/images/flower.jpg'
 import { Trans, useTranslation } from 'react-i18next'
@@ -28,14 +28,13 @@ export function HomePage() {
                 import.meta.env.VITE_EMAILJS_USER_ID
             )
 
-            console.log('Email sent:', result.text)
+            // console.log('Email sent:', result.text)
             const successMsg = t('successMsg')
             showSuccessMsg(successMsg)
 
         } catch (error) {
 
             console.error('Error sending email:', error)
-            // showErrorMsg('Sorry, a problem occurred. Please try again')
             const errorMsg = t('errorMsg')
             showErrorMsg(errorMsg)
 

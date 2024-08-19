@@ -13,6 +13,16 @@ export function HomePage() {
     const { t } = useTranslation()
     const { executeRecaptcha } = useGoogleReCaptcha()
 
+    const testRecaptcha = async () => {
+        if (!executeRecaptcha) {
+            console.log("Execute recaptcha not yet available");
+            return;
+        }
+
+        const token = await executeRecaptcha('test_action');
+        console.log('reCAPTCHA Token:', token);
+    };
+
     async function onSubmit({ email, fullname, msg, phone }) {
         try {
             if (!executeRecaptcha) {
@@ -99,6 +109,7 @@ export function HomePage() {
             <div className="img-wrapper-deco flex justify-center">
                 <img src={snails}></img>
             </div>
+            <button onClick={testRecaptcha}>Test reCAPTCHA</button>
         </div>
     )
 }

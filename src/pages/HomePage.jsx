@@ -5,39 +5,19 @@ import flower from '/images/flower.jpg'
 import { Trans, useTranslation } from 'react-i18next'
 import emailjs from '@emailjs/browser';
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 
 export function HomePage() {
 
     const { t } = useTranslation()
-    const { executeRecaptcha } = useGoogleReCaptcha()
-
-    const testRecaptcha = async () => {
-        if (!executeRecaptcha) {
-            console.log("Execute recaptcha not yet available");
-            return;
-        }
-
-        const token = await executeRecaptcha('test_action');
-        console.log('reCAPTCHA Token:', token);
-    };
 
     async function onSubmit({ email, fullname, msg, phone }) {
         try {
-            if (!executeRecaptcha) {
-                console.log("Execute recaptcha not yet available")
-                return
-            }
-
-            const recaptchaToken = await executeRecaptcha('submit_form')
-
             const templateParams = {
                 from_name: fullname,
                 from_email: email,
                 message: msg,
                 phone: phone,
-                'g-recaptcha-response': recaptchaToken
             }
 
             const result = await emailjs.send(
@@ -109,7 +89,6 @@ export function HomePage() {
             <div className="img-wrapper-deco flex justify-center">
                 <img src={snails}></img>
             </div>
-            <button onClick={testRecaptcha}>Test reCAPTCHA</button>
         </div>
     )
 }

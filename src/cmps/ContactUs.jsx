@@ -1,12 +1,14 @@
 import { TextField, ThemeProvider, createTheme } from "@mui/material"
-import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize';
-import { useState } from "react"
-import { useLanguage } from "../contexts/LanguageContext";
+import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize'
+import { useRef, useState } from "react"
+import { useLanguage } from "../contexts/LanguageContext"
+import ReCAPTCHA from "react-google-recaptcha"
 
 export function ContactUs({ t, onSubmit }) {
 
     const [userInfo, setUserInfo] = useState({ email: '', fullname: '', phone: '', msg: '' })
     const { isLangHe } = useLanguage()
+    const recaptchaRef = useRef(null);
 
     function handleChange({ target }) {
         const { name: field, value } = target
@@ -15,8 +17,22 @@ export function ContactUs({ t, onSubmit }) {
 
     function handleSubmit(ev) {
         ev.preventDefault()
-        onSubmit(userInfo)
-        resetForm()
+
+        if (recaptchaRef.current) {
+            // Programmatically trigger reCAPTCHA
+            recaptchaRef.current.execute();
+        }
+
+        // onSubmit(userInfo)
+        // resetForm()
+    }
+
+    function onRecaptchaResolved(token) {
+        // If reCAPTCHA is valid, proceed to submit form
+        if (token) {
+            onSubmit(userInfo);
+            resetForm();
+        }
     }
 
     function resetForm() {
@@ -85,6 +101,13 @@ export function ContactUs({ t, onSubmit }) {
                         onChange={handleChange}
                         className="form-element textarea"
 
+                    />
+
+                    <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        size="invisible"
+                        ref={recaptchaRef}
+                        onChange={onRecaptchaResolved}
                     />
 
                     <button className="btn">{t('submit')}</button>

@@ -11,13 +11,14 @@ export function HomePage() {
 
     const { t } = useTranslation()
 
-    async function onSubmit({ email, fullname, msg, phone }) {
+    async function onSubmit({ email, fullname, msg, phone, recaptchaToken }) {
         try {
             const templateParams = {
                 from_name: fullname,
                 from_email: email,
                 message: msg,
                 phone: phone,
+                'g-recaptcha-response': recaptchaToken
             }
 
             const result = await emailjs.send(

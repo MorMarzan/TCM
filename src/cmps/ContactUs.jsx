@@ -31,7 +31,7 @@ export function ContactUs({ t, onSubmit }) {
         // If reCAPTCHA is valid, proceed to submit form
         console.log('reCAPTCHA Token:', token);
         if (token) {
-            onSubmit(userInfo);
+            onSubmit({ ...userInfo, recaptchaToken: token });
             resetForm();
         }
     }

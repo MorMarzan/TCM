@@ -3,7 +3,7 @@ import logo from '/images/hands-favicon.png'
 import snails from '/images/snails.png'
 import flower from '/images/flower.jpg'
 import { Trans, useTranslation } from 'react-i18next'
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 
 

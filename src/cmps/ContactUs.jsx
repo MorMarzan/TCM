@@ -1,14 +1,17 @@
-import { TextField, ThemeProvider, createTheme } from "@mui/material"
-import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize'
 import { useRef, useState } from "react"
 import { useLanguage } from "../contexts/LanguageContext"
 import ReCAPTCHA from "react-google-recaptcha"
+
+import { showErrorMsg } from "../services/event-bus.service"
+
+import { TextField, ThemeProvider, createTheme } from "@mui/material"
+import { TextareaAutosize as BaseTextareaAutosize } from '@mui/base/TextareaAutosize'
 
 export function ContactUs({ t, onSubmit }) {
 
     const [userInfo, setUserInfo] = useState({ email: '', fullname: '', phone: '', msg: '' })
     const { isLangHe } = useLanguage()
-    const recaptchaRef = useRef(null);
+    const recaptchaRef = useRef(null)
 
     function handleChange({ target }) {
         const { name: field, value } = target
@@ -17,27 +20,23 @@ export function ContactUs({ t, onSubmit }) {
 
     function handleSubmit(ev) {
         ev.preventDefault()
-
         if (recaptchaRef.current) {
-            // Programmatically trigger reCAPTCHA
-            recaptchaRef.current.execute();
+            recaptchaRef.current.execute()
         }
-
-        // onSubmit(userInfo)
-        // resetForm()
     }
 
     function onRecaptchaResolved(token) {
-        // If reCAPTCHA is valid, proceed to submit form
-        console.log('reCAPTCHA Token:', token);
         if (token) {
-            onSubmit({ ...userInfo, recaptchaToken: token });
-            resetForm();
+            onSubmit({ ...userInfo, recaptchaToken: token })
+            resetForm()
+        } else {
+            const errorMsg = t('errorMsg')
+            showErrorMsg(errorMsg)
         }
     }
 
     function resetForm() {
-        setUserInfo({ email: '', fullname: '', phone: '', msg: '' });
+        setUserInfo({ email: '', fullname: '', phone: '', msg: '' })
     }
 
     const theme = createTheme({

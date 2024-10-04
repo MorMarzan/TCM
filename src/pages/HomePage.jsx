@@ -71,7 +71,7 @@ export function HomePage() {
                     </p>
                     <p>
                         <Trans i18nKey="tcmTools" >
-                            The tools used as part of this program work, but the emphasis is not on any specific tool, it goes much deeper. The process helps develop <mark>clarity</mark> about what is most important <mark>for you</mark> and the <mark>determination</mark> to make your life much better.
+                            The tools used as part of this program work, but the emphasis is not on any specific tool, it goes much deeper; The process helps develop <mark>clarity</mark> about what is most important <mark>for you</mark> and the <mark>determination</mark> to make your life much better.
                             Through the program, you will learn how to break habit patterns which work against you, and instead develop habits that <mark>really</mark> help you. It will also strengthen your ability to observe your life and the choices you make through a new lens.
                         </Trans>
                     </p>

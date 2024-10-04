@@ -10,7 +10,16 @@ html {
     font-family: Montserrat-Regular, sans-serif;
     font-size: 15px;
     line-height: lh(25px, 15px);
-    // white-space: pre-line;
+}
+
+html:lang(he) {
+    font-family: Assistant-Variable, sans-serif;
+
+    input,
+    textarea,
+    .btn {
+        font-family: Assistant-Variable, sans-serif;
+    }
 }
 
 body {
@@ -27,6 +36,7 @@ body {
     direction: rtl;
 
     .MuiFormLabel-root {
+        font-family: Assistant-Variable, sans-serif;
         left: inherit !important;
         right: 1.75rem !important;
         transform-origin: right !important;
@@ -50,6 +60,17 @@ h6 {
     font-family: Montserrat-SemiBold, sans-serif;
     line-height: 1.5;
     margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    &:lang(he) {
+        font-family: Assistant-Variable, sans-serif;
+    }
 }
 
 h1 {
@@ -92,11 +113,6 @@ h6 {
         font-size: em(18px, 15px);
     }
 }
-
-h6 {
-    font-family: Livvic-SemiBold, sans-serif;
-}
-
 
 main {
     scroll-padding-inline: calc($gap *2);
@@ -141,11 +157,6 @@ mark {
     color: $clrPrimary-1;
 }
 
-.logo {
-    font-family: Rothek, sans-serif;
-    cursor: pointer;
-}
-
 nav {
 
     .active {
@@ -171,4 +182,10 @@ nav {
         opacity: 1;
         pointer-events: auto;
     }
+}
+
+input,
+textarea,
+.btn {
+    font-family: Montserrat-Regular, sans-serif;
 }

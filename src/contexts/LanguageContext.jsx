@@ -21,12 +21,19 @@ export function LanguageProvider({ children }) {
 
     useEffect(() => {
         document.body.classList.toggle('rtl', isLangHe)
+        if (isLangHe) {
+            document.documentElement.setAttribute('lang', 'he')
+        }
+        else {
+            document.documentElement.setAttribute('lang', 'en')
+        }
     }, [isLangHe])
 
     const toggleLanguage = () => {
         const lngToSwitch = isLangHe ? 'en' : 'he'
         setIsLangHe(!isLangHe)
         i18n.changeLanguage(lngToSwitch)
+        // document.documentElement.setAttribute('lang', lngToSwitch)
         if (lngToSwitch === 'he') {
             navigate(`?lang=he`)
         } else {

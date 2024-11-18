@@ -58,6 +58,7 @@ export function HomePage() {
                     <img src={flower}></img>
                 </div>
                 <div className='content'>
+                    <p>{t('tcmAboutMe')}</p>
                     <p>
                         <Trans i18nKey="tcmIntro" >
                             TCM is a 3 month one-on-one program, where you will learn how to <mark>significantly</mark> improve the way you take care of yourself.
